@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#wrapper{
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: linear-gradient(to right, #041308, #0b3317);
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.2rem;
+} 
+.container{
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    width: 960px;
+    margin: 0 auto;
+}
+.left-text{
+    flex-basis: 35%; /*since direction of flex is row => flex basis will be used to set up width, otherwise if direction is col => flex basis will be used to set up height*/
+}
+.heading{
+    font-size: 3rem;
+    color: whitesmoke;
+    text-align: center;
+}
+.para{
+    color: #ddd;
+    margin-top: 10px;
+    text-align: center;
+}
+.name{
+    color: #ddd;
+    margin-top: 10px;
+    text-align: right;
+}
+.right-gallery{
+    flex-basis: 55%;
+    display: grid;
+    grid-template-areas: "waterfall hills hills"
+                         "waterfall ocean rain"
+                         "mountain mountain rain"
+                         "trees beach beach";
+    gap: 8px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 130px;
+}
+.box{
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    filter: grayscale(40%);
+    
+    background-color: #222;
+    background-blend-mode: exclusion;
+    background-position: top;
+}
+.box:hover{
+    filter: grayscale(0%);
+    background-position: center;
+    background-blend-mode: normal;
+    transition: all 1s ease-in-out;
+    box-shadow: 0 0 4px whitesmoke;
+    cursor: pointer;
+}
+#box1{
+    background-image: url(./Images/waterfall.jpg);
+    grid-area: waterfall;
+    /* background-position: top; */
+}
+#box2{
+    background-image: url(./Images/hills.jpg);
+    grid-area: hills;
+    /* background-position: left; */
+}
+#box3{
+    background-image: url(./Images/ocean.jpg);
+    grid-area: ocean;
+    /* background-position: bottom; */
+}
+#box4{
+    background-image: url(./Images/rain.jpg);
+    grid-area: rain;
+    /* background-position: top; */
+}
+#box5{
+    background-image: url(./Images/mountain.jpg);
+    grid-area: mountain;
+    /* background-position: right; */
+}
+#box6{
+    background-image: url(./Images/trees.jpg);
+    grid-area: trees;
+    /* background-position: bottom; */
+}
+#box7{
+    background-image: url(./Images/beach.jpg);
+    grid-area: beach;
+    /* background-position: right; */
+}
